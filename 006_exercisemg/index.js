@@ -1,19 +1,34 @@
-//Este es el JSON que recibes
-//var json = '[{"id":1,"description":"DESC1"},{"id":2,"description":"DESC2"},{"id":3,"description":"DESC3"}]';
+
+
 var fs = require("fs");
-var Json = fs.readFileSync("consulta.json")
-console.log(Json+"");
+var arreglo = [];
 
 
-//Lo parseamos para convertirlo en objeto
-var types = JSON.parse(Json);
-console.log(types)
+//function jsontoarray(){
+    var Json = fs.readFileSync("consulta.json")
+    //console.log(Json + "");
 
- 
-//Y lo recorremos
-for(x=0; x<types.length; x++) {
-    console.log(types[x].id);
-    console.log(types[x].description);
-}
+    //Lo parseamos para convertirlo en objeto
+    var types = JSON.parse(Json);
+    
+    
+    //Y lo recorremos
+    for(var x=0; x<types.length; x++) {
+        arreglo.push(types[x]);
+        
+    }
+      
+    console.log(arreglo);
 
+
+    var cad;
+    
+ module.exports = function posArray(pos){
+        
+        return cad = arreglo[pos];
+        
+    }
+   
+    
+    
 
